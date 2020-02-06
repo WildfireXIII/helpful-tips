@@ -62,3 +62,19 @@ the `json` module can pretty print the data with the `indent` arg when it saves:
 with open("mydatafile.json", 'w') as outfile:
 	json.dump(mythings, outfile, indent=4)
 ```
+
+# Dictionary and array unwrapping in function calls
+
+`*` and `**` aren't just fancy delimiters for `*args` and `**kwargs` in a function definition, you can use them anywhere you would need to "unwrap" an array (with the single `*`) or a dictionary (with the double `**`) in a function call:
+
+```python
+def dothing(name, message):
+    print(name, "says", message)
+
+
+>>> mydata = {"name": "Nathan", "message": "Hello world!"}
+>>> dothing(**mydata)
+Nathan says Hello world!
+```
+
+This is particularly useful if, say, you're loading in experiment parameters from a json file and don't want to have to manually add code to pass each individual parameter explicitly to the function
