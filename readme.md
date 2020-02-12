@@ -82,8 +82,6 @@ This is particularly useful if, say, you're loading in experiment parameters fro
 
 # String multiplication
 
-Quick python tip of the day: (pretty common one, but I always forget it exists)
-
 Strings can be multiplied with a number, and python automagically repeats the string that many times:
 
 ```python
@@ -91,7 +89,7 @@ Strings can be multiplied with a number, and python automagically repeats the st
 ================================================================================
 ```
 
-This is useful if you want a readable and consistent way to make breaks in output logs: (without manually counting and copying/pasting the symbols like a pleb)
+This is useful if you want a readable and consistent way to make breaks in output logs: 
 
 ```python
 >>> print("="*30, "TRAINING", "="*30)
