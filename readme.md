@@ -78,3 +78,22 @@ Nathan says Hello world!
 ```
 
 This is particularly useful if, say, you're loading in experiment parameters from a json file and don't want to have to manually add code to pass each individual parameter explicitly to the function
+
+
+# String multiplication
+
+Quick python tip of the day: (pretty common one, but I always forget it exists)
+
+Strings can be multiplied with a number, and python automagically repeats the string that many times:
+
+```python
+>>> print("="*80)
+================================================================================
+```
+
+This is useful if you want a readable and consistent way to make breaks in output logs: (without manually counting and copying/pasting the symbols like a pleb)
+
+```python
+>>> print("="*30, "TRAINING", "="*30)
+============================== TRAINING ==============================
+```
