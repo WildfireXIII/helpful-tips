@@ -95,3 +95,14 @@ This is useful if you want a readable and consistent way to make breaks in outpu
 >>> print("="*30, "TRAINING", "="*30)
 ============================== TRAINING ==============================
 ```
+
+# IPython save lines
+
+Using ipython's `%history` magic allows you to collect lines together:
+
+For example:
+```ipython
+%history 1 3-4
+```
+will print out code line 1 and 3 through 4 together. You can append a `-f
+[filename]` flag to have it output to a file
