@@ -106,3 +106,43 @@ For example:
 ```
 will print out code line 1 and 3 through 4 together. You can append a `-f
 [filename]` flag to have it output to a file
+
+
+# Dump unserializable things to JSON
+
+
+If you're trying to dump json stuff just for debugging or inspection purposes and you have a ton of stuff that's not serializable (and you really just want whatever python's REPL would print out with `str()`) you can use the `default` arg in `json.dump` (takes a function param and applies it to anything it can't serialize correctly):
+
+```python
+my_unserializable_dict = {}
+with open(some_path, "w") as outfile:
+    json.dump(my_unserializable_dict, outfile, default=lambda x: str(x))
+```
+
+# Python conditional syntactic sugar
+
+you can do conditional one-liners after assignment syntax to make it "read" better (one of the only pieces of syntactic sugar in ruby I actually liked):
+
+```python
+>>> thing = "hello" if True else "no"
+>>> thing
+"hello"
+```
+
+```python
+>>> thing = "hello" if False else "no"
+>>> thing
+"no"
+```
+
+# Python reverse index search
+
+If you need to find the last occurrence of a substring in a string, you can just use `rindex`, instead of manually iterating with `index`:
+
+```python
+haystack = "this is a string example"
+needle = "is">>> print(haystack.rindex(needle))
+5
+>>> print(haystack.index(needle))
+2
+```
